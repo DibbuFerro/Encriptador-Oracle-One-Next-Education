@@ -5,18 +5,21 @@ let buttonCopiar = document.querySelector("#buttonC")
 let output =document.querySelector(".output")
 let noData= document.querySelector(".noData")
 let imgNoData= document.querySelector(".imgNoData")
+let valorActual = "";
 
 let encriptar=()=>{
-    let encriptado=(textInput.value.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat"))
+    let encriptado= ((textInput.value ? textInput.value : valorActual).replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat"))
     output.innerHTML=`<h3 class="mensaje">${encriptado}</h3>`
     buttonCopiar.style.display="block"
     output.style.display="relative"
     noData.style.display="none"
     imgNoData.style.display="none"
+    valorActual = encriptado;
     textInput.value=""
 }
 let desencriptar=()=>{
-    let desencriptado= (textInput.value.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u"))
+    let desencriptado = ((textInput.value ? textInput.value : valorActual).replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u"))
+    valorActual = desencriptado;
     output.innerHTML=`<h3 class="mensaje">${desencriptado}</h3>
                 <button id="buttonC">Copiar</button>
                      `
