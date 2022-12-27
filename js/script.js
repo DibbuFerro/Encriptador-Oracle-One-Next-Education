@@ -5,7 +5,7 @@ let buttonCopiar = document.querySelector("#buttonC")
 let output =document.querySelector(".output")
 let noData= document.querySelector(".noData")
 let imgNoData= document.querySelector(".imgNoData")
-let valorActual = null;
+let valorActual = "";
 
 let encriptar=()=>{
     let encriptado= ((textInput.value ? textInput.value : valorActual).replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat"))
